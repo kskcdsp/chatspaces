@@ -3,22 +3,75 @@
 </div>
 <div class="chatspace__admin">
   <div class="chatspace__admin--back-black">
-    <p>username</p>
+    <h3 class="admin-header-name">username</h3>
+    <ul class="admin-header-ul">
+      <li class="admin-header-li"><%= fa_icon("edit") %></li>
+      <li class="admin-header-li"><%= fa_icon("cog") %></li>
+    </ul>
   </div>
   <div class="chatspace__admin__history">
-    <p>username</p>
-    <span>まだメッセージはありません。</span>
-    <p>username</p>
-    <span>まだメッセージはありません。</span>
-    <p>username</p>
-    <span>まだメッセージはありません。</span>
+    <div class="admin-box">
+      <p class="admin-history-name">username</p>
+
+      <p class="admin-history-message">まだメッセージはありません。</p>
+
+    </div>
+
+    <div class="admin-box">
+      <p class="admin-history-name">username</p>
+
+      <p class="admin-history-message">まだメッセージはありません。</p>
+
+    </div>
+    <div class="admin-box">
+      <p class="admin-history-name">username</p>
+
+      <p class="admin-history-message">まだメッセージはありません。</p>
+    </div>
   </div>
 </div>
+
 <div class="chatspace__message">
   <div class="chatspace__message--back-white">
+    <div class="message-header-left">
+      <p class="message-group-name">groupname</p>
+      <p class="message-user-name">Member : username</p>
+    </div>
+    <div class="message-header-right">
+      <a class="message-header-right-button" href="">Edit</a>
+    </div>
   </div>
   <div class="chatspace__message__chat">
+    <div class="chat-box">
+      <div class="chat-box-up">
+        <p class="chat-user-name">asaisorami</p>
+        <p class="chat-create-time">2018/03/12 09:58</p>
+      </div>
+      <p class="chat-message">こんにちわ</p>
+    </div>
+    <div class="chat-box">
+      <div class="chat-box-up">
+        <p class="chat-user-name">asaisorami</p>
+        <p class="chat-create-time">2018/03/12 09:58</p>
+      </div>
+      <p class="chat-message">こんにちわ</p>
+    </div>
+    <div class="chat-box">
+      <div class="chat-box-up">
+        <p class="chat-user-name">asaisorami</p>
+        <p class="chat-create-time">2018/03/12 09:58</p>
+      </div>
+      <p class="chat-message">こんにちわ</p>
+    </div>
   </div>
-  <div class="chatspace__message__type">
-  </div>
+  <form class="chatspace__message__type">
+    <div class="message-type-box">
+      <div class="message-type-holder"></div>
+      <label class="message-type-holder-photo">
+        <p class="message-type-holder-photo-button"><%= fa_icon("picture-o") %></p>
+      </label>
+    </div>
+      <input type='submit' value='Send' class="sumbit-button">
+  </form>
 </div>
+
