@@ -22,12 +22,12 @@
 - has_many :users, through: :groups_users
 - has_many :messages
 
-## Membersテーブル
+## GroupsUsersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true, unique: true, add_index|
-|group_id|integer|null: false, foreign_key: true, unique: true, add_index|
+add_index %i|user_id|integer|null: false, foreign_key: true, unique: true|
+add_index %i|group_id|integer|null: false, foreign_key: true, unique: true|
 
 ### Association
 - belongs_to :group
