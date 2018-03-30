@@ -24,10 +24,9 @@
 
 ## GroupsUsersテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-add_index %i|user_id|integer|null: false, foreign_key: true, unique: true|
-add_index %i|group_id|integer|null: false, foreign_key: true, unique: true|
+|Column|Options|
+|------|-------|
+|add_index %i[user_id group_id]|unique: true|
 
 ### Association
 - belongs_to :group
