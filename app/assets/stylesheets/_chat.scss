@@ -111,12 +111,10 @@ div {
       box-sizing: border-box;
       height: calc(100vh - 100px - 90px);
       background-color: #FAFAFA;
-      overflow: scroll;
+      overflow: auto;
       padding: 46px 40px 0;
 
       .chat-box {
-        margin-bottom: 40px;
-
       }
 
       .chat-box-up {
@@ -127,18 +125,20 @@ div {
         font-size: 16px;
         font-weight: bold;
         color: #434a54;
+        float: left;
+        margin-right: 10px;
       }
 
       .chat-create-time {
         font-size: 12px;
         color: #999999;
-        padding-left: 10px;
       }
 
       .chat-message {
         font-size: 14px;
         color: #434a54;
         padding-top: 10px;
+        margin-bottom: 40px;
       }
 
     }
@@ -190,6 +190,5 @@ form {
         float: right;
       }
     }
-
   }
 }
