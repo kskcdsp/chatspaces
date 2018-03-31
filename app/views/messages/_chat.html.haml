@@ -1,5 +1,5 @@
 .chatspace-content__info
-  チャットグループが作成されました;
+  チャットグループが作成されました。
 .chatspace__admin
   .chatspace__admin--back-black
     %h3.admin-header-name username
@@ -9,40 +9,31 @@
   .chatspace__admin__history
     .admin-box
       %p.admin-history-name username
-      %p.admin-history-message メッセージはありません。;
+      %p.admin-history-message メッセージはありません。
     .admin-box
       %p.admin-history-name username
-      %p.admin-history-message メッセージはありません。;
+      %p.admin-history-message メッセージはありません。
     .admin-box
       %p.admin-history-name username
-      %p.admin-history-message メッセージはありません。;
+      %p.admin-history-message メッセージはありません。
 .chatspace__message
   .chatspace__message--back-white
     .message-header-left
       %p.message-group-name groupname
       %p.message-user-name Member : username
     .message-header-right
-      %a.message-header-right-button{:href => ""} Edit
+      %message-header-right-button= link_to 'Edit'
   .chatspace__message__chat
     .chat-box
       .chat-box-up
+      - 20.times do
         %p.chat-user-name asaisorami
         %p.chat-create-time 2018/03/12 09:58
-      %p.chat-message こんにちわ;
-    .chat-box
-      .chat-box-up
-        %p.chat-user-name asaisorami
-        %p.chat-create-time 2018/03/12 09:58
-      %p.chat-message こんにちわ;
-    .chat-box
-      .chat-box-up
-        %p.chat-user-name asaisorami
-        %p.chat-create-time 2018/03/12 09:58
-      %p.chat-message こんにちわ;
+        %p.chat-message こんにちは
   %form.chatspace__message__type
-    = form_tag('/messages', method: :post) do
+    = form_for '' do
       %textarea.message-type-box{:placeholder => "type a message"}
       .message-type-holder
         %label.message-type-holder-photo
           %p.message-type-holder-photo-button= fa_icon("picture-o")
-      %input.sumbit-button{:type => "submit", :value => "Send"}
+      %input.sumbit-button{type: "submit", value: "Send"}
