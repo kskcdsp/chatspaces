@@ -8,12 +8,7 @@
       %li.admin-header-li= fa_icon("cog")
   .chatspace__admin__history
     .admin-box
-      %p.admin-history-name username
-      %p.admin-history-message メッセージはありません。
-    .admin-box
-      %p.admin-history-name username
-      %p.admin-history-message メッセージはありません。
-    .admin-box
+    - 20.times do
       %p.admin-history-name username
       %p.admin-history-message メッセージはありません。
 .chatspace__message
@@ -22,7 +17,7 @@
       %p.message-group-name groupname
       %p.message-user-name Member : username
     .message-header-right
-      %message-header-right-button= link_to 'Edit'
+      = link_to 'Edit', '/', class: 'message-header-right-button'
   .chatspace__message__chat
     .chat-box
       .chat-box-up
@@ -30,10 +25,10 @@
         %p.chat-user-name asaisorami
         %p.chat-create-time 2018/03/12 09:58
         %p.chat-message こんにちは
-  %form.chatspace__message__type
-    = form_for '' do
-      %textarea.message-type-box{:placeholder => "type a message"}
-      .message-type-holder
-        %label.message-type-holder-photo
-          %p.message-type-holder-photo-button= fa_icon("picture-o")
-      %input.sumbit-button{type: "submit", value: "Send"}
+  .form.chatspace__message__type
+    = form_for '' do |f|
+      = f.text_area :content, class: 'message-type-box', placeholder: "type a message"
+      = f.label :image, class: 'message-type-holder-photo' do
+        = fa_icon("picture-o")
+      = f.file_field :image, class: 'message-type-holder-photo-file'
+      = f.submit 'Send', class: 'submit-button'

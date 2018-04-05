@@ -45,22 +45,23 @@ div {
     }
 
     &__history {
-      width: 300px;
       height: calc(100vh - 100px);
       padding: 0 20px;
       background-color: #2f3e51;
+      overflow-y: scroll;
 
       .admin-box {
-        padding: 20px 0 40px;
       }
 
 
       .admin-history-name {
         font-size: 15px;
+        padding-top: 20px;
       }
       .admin-history-message {
         font-size: 11px;
         margin-top: 5px;
+        padding-bottom: 40px;
       }
     }
   }
@@ -111,11 +112,8 @@ div {
       box-sizing: border-box;
       height: calc(100vh - 100px - 90px);
       background-color: #FAFAFA;
-      overflow: auto;
+      overflow-y: scroll;
       padding: 46px 40px 0;
-
-      .chat-box {
-      }
 
       .chat-box-up {
         display: flex;
@@ -143,10 +141,6 @@ div {
 
     }
 
-form {
-  display: block;
-}
-
     &__type {
       height: 90px;
       box-sizing: border-box;
@@ -157,13 +151,10 @@ form {
         border: none;
         box-sizing: border-box;
         float: left;
-        height: 50px;
         padding: 0 10px;
+        height: 50px;
         width: calc(100% - 150px);
         background-color: white;
-      }
-
-      textarea {
         resize: none;
       }
 
@@ -172,14 +163,15 @@ form {
         float: left;
         height: 50px;
         padding-right: 10px;
-      }
-
-      .message-type-holder-photo-button {
         font-size: 20px;
         line-height: 50px;
       }
 
-      .sumbit-button {
+      .message-type-holder-photo-file {
+        display: none;
+      }
+
+      .submit-button {
         background-color: #38AEF0;
         border: none;
         color: #fff;
