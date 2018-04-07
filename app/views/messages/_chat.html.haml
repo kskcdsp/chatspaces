@@ -10,22 +10,22 @@
     .admin__history
       - 20.times do
         .admin__box
-        %p.admin__admin-user username
-        %p.admin__admin-message メッセージはありません。
+        %p.admin__user-upper username
+        %p.admin__message-lower メッセージはありません。
   .message
     .message__back-white
       .message__leftside
-        %p.message__message-group groupname
-        %p.message__message-user Member : username
+        %p.message__group-upper groupname
+        %p.message__user-lower Member : username
       .message__rightside
         = link_to 'Edit', '/', class: 'message__rightside-button'
     .chat
       .chat__box
         - 20.times do
           .chat__upper
-          %p.chat__chat-user asaisorami
+          %p.chat__over-user asaisorami
           %p.chat__create-time 2018/03/12 09:58
-          %p.chat__chat-message こんにちは
+          %p.chat__under-message こんにちは
     .form.type
       = form_for '' do |f|
         = f.text_area :content, class: 'type__holder', placeholder: "type a message"
