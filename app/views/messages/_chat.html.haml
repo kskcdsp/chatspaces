@@ -1,34 +1,35 @@
-.chatspace-content__info
-  チャットグループが作成されました。
-.chatspace__admin
-  .chatspace__admin--back-black
-    %h3.admin-header-name username
-    %ul.admin-header-ul
-      %li.admin-header-li= fa_icon("edit")
-      %li.admin-header-li= fa_icon("cog")
-  .chatspace__admin__history
-    .admin-box
-    - 20.times do
-      %p.admin-history-name username
-      %p.admin-history-message メッセージはありません。
-.chatspace__message
-  .chatspace__message--back-white
-    .message-header-left
-      %p.message-group-name groupname
-      %p.message-user-name Member : username
-    .message-header-right
-      = link_to 'Edit', '/', class: 'message-header-right-button'
-  .chatspace__message__chat
-    .chat-box
-      .chat-box-up
+.conent
+  .content__info
+    チャットグループが作成されました。
+  .admin
+    .admin__back-black
+      .admin__namebox username
+      %ul.admin__awesome
+        %li.admin__icons= fa_icon("edit")
+        %li.admin__icons= fa_icon("cog")
+    .admin__history
       - 20.times do
-        %p.chat-user-name asaisorami
-        %p.chat-create-time 2018/03/12 09:58
-        %p.chat-message こんにちは
-  .form.chatspace__message__type
-    = form_for '' do |f|
-      = f.text_area :content, class: 'message-type-box', placeholder: "type a message"
-      = f.label :image, class: 'message-type-holder-photo' do
-        = fa_icon("picture-o")
-      = f.file_field :image, class: 'message-type-holder-photo-file'
-      = f.submit 'Send', class: 'submit-button'
+        .admin__box
+        %p.admin__admin-user username
+        %p.admin__admin-message メッセージはありません。
+  .message
+    .message__back-white
+      .message__leftside
+        %p.message__message-group groupname
+        %p.message__message-user Member : username
+      .message__rightside
+        = link_to 'Edit', '/', class: 'message__rightside-button'
+    .chat
+      .chat__box
+        - 20.times do
+          .chat__upper
+          %p.chat__chat-user asaisorami
+          %p.chat__create-time 2018/03/12 09:58
+          %p.chat__chat-message こんにちは
+    .form.type
+      = form_for '' do |f|
+        = f.text_area :content, class: 'type__holder', placeholder: "type a message"
+        = f.label :image, class: 'type__photo' do
+          = fa_icon("picture-o")
+        = f.file_field :image, class: 'type__photo-file'
+        = f.submit 'Send', class: 'type__submit-button'

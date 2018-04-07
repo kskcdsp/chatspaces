@@ -26,7 +26,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|add_index %i[user_id group_id]|integer|null: false, foreign_key: true, unique: true|
+|user_id|integer|foreign_key, null: false|
+|group_id|integer|foreign_key, null: false|
+
+- add_index %i[user_id group_id], unique: true
+
 
 ### Association
 - belongs_to :group
