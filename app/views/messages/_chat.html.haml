@@ -6,16 +6,19 @@
         = current_user.name
       %ul.admin__awesome
         %li.admin__icons
-          = fa_icon 'edit'
+          = link_to new_group_path(current_user) do
+            = fa_icon 'edit', class: 'icon'
         %li.admin__icons
           = link_to edit_user_path(current_user) do
-            = fa_icon 'cog'
+            = fa_icon 'cog', class: 'icon'
     .admin__history
-      - 20.times do
-        .admin__box
-        %p.admin__user-upper
-          = current_user.name
-        %p.admin__message-lower メッセージはありません。
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .admin__box
+          %p.admin__user-upper
+            = group.name
+          %p.admin__message-lower
+            メッセージはありません。
   .message
     .message__back-white
       .message__leftside
@@ -23,7 +26,8 @@
         %p.message__user-lower
           = "Menber : #{current_user.name} "
       .message__rightside
-        = link_to 'Edit', '/', class: 'message__rightside-button'
+        = link_to edit_group_path(current_user) do
+          %p Edit
     .chat
       .chat__box
         - 20.times do
@@ -36,6 +40,6 @@
       = form_for '' do |f|
         = f.text_area :content, class: 'type__holder', placeholder: "type a message"
         = f.label :image, class: 'type__photo' do
-          = fa_icon("picture-o")
+          = fa_icon 'picture-o', class: 'icon'
         = f.file_field :image, class: 'type__photo-file'
         = f.submit 'Send', class: 'type__submit-button'
