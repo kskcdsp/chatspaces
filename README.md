@@ -1,24 +1,50 @@
-# README
+# chatspace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Groupsテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* Ruby version
+### Association
+- has_many :groups_users
+- has_many :groups, through: :groups_users
+- has_many :messages
 
-* System dependencies
+## Usersテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, add_index|
 
-* Database creation
+### Association
+- has_many :groups_users
+- has_many :users, through: :groups_users
+- has_many :messages
 
-* Database initialization
+## GroupsUsersテーブル
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|foreign_key, null: false|
+|group_id|integer|foreign_key, null: false|
 
-* Services (job queues, cache servers, search engines, etc.)
+- add_index %i[user_id group_id], unique: true
 
-* Deployment instructions
 
-* ...
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## Messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|body|text||
+|image|string||
+
+### Association
+- belongs_to :group
+- belongs_to :user

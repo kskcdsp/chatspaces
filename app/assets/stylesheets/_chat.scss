@@ -1,0 +1,146 @@
+.content {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+}
+.admin {
+  width: 300px;
+  float: left;
+  box-sizing: border-box;
+  color: $white;
+  &__back-black {
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    background-color: $back-black;
+  }
+  &__namebox {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: bold;
+  }
+  &__awesome {
+    float: right;
+    display: inline-block;
+  }
+  &__icons {
+    display: inline-block;
+  }
+  &__history {
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    overflow-y: scroll;
+    background-color: $back-thin-black;
+  }
+  &__user-upper {
+    font-size: 15px;
+    padding-top: 20px;
+  }
+  &__message-lower {
+    font-size: 11px;
+    margin-top: 5px;
+    padding-bottom: 40px;
+  }
+}
+
+.message {
+  width: calc(100vw - 300px);
+  float: right;
+  &__back-white {
+  height: 100px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  }
+  &__leftside {
+    float: left;
+  }
+  &__rightside {
+    height: 40px;
+    float: right;
+    line-height: 40px;
+    margin-top: 28px;
+    padding: 0 20px;
+    border: 1px solid $sky-blue;
+    color: $sky-blue;
+  }
+  &__rightside-button {
+    text-decoration: none;
+    color: $sky-blue;
+  }
+  &__group-upper {
+    margin-top: 35px;
+    font-size: 20px;
+    color: $black;
+  }
+  &__user-lower {
+    font-size: 12px;
+    margin-top: 15px;
+    color: $gray;
+  }
+}
+.chat {
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  background-color: $back-thin-gray;
+  &__upper {
+    display: flex;
+  }
+  &__over-user {
+    float: left;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: $black-font;
+  }
+  &__create-time {
+    font-size: 12px;
+    color: $gray;
+  }
+  &__under-message {
+    font-size: 14px;
+    padding-top: 10px;
+    margin-bottom: 40px;
+    color: $black-font;
+  }
+}
+.type {
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  box-sizing: border-box;
+  background-color: $back-thick-gray;
+  &__holder {
+    height: 50px;
+    width: calc(100% - 150px);
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+    resize: none;
+    border: none;
+    background-color: $white;
+  }
+  &__photo {
+    height: 50px;
+    float: left;
+    padding-right: 10px;
+    font-size: 20px;
+    line-height: 50px;
+    background-color: $white-font;
+  }
+  &__photo-file {
+    display: none;
+  }
+  &__submit-button {
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+    float: right;
+    font-size: 16px;
+    background-color: $sky-blue;
+    border: none;
+    color: $white-font;
+  }
+}
+
+

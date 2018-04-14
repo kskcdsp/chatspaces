@@ -1,0 +1,41 @@
+.conent
+  = render 'flash'
+  .admin
+    .admin__back-black
+      .admin__namebox
+        = current_user.name
+      %ul.admin__awesome
+        %li.admin__icons
+          = fa_icon 'edit'
+        %li.admin__icons
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog'
+    .admin__history
+      - 20.times do
+        .admin__box
+        %p.admin__user-upper
+          = current_user.name
+        %p.admin__message-lower メッセージはありません。
+  .message
+    .message__back-white
+      .message__leftside
+        %p.message__group-upper groupname
+        %p.message__user-lower
+          = "Menber : #{current_user.name} "
+      .message__rightside
+        = link_to 'Edit', '/', class: 'message__rightside-button'
+    .chat
+      .chat__box
+        - 20.times do
+          .chat__upper
+          %p.chat__over-user
+            = current_user.name
+          %p.chat__create-time 2018/03/12 09:58
+          %p.chat__under-message こんにちは
+    .form.type
+      = form_for '' do |f|
+        = f.text_area :content, class: 'type__holder', placeholder: "type a message"
+        = f.label :image, class: 'type__photo' do
+          = fa_icon("picture-o")
+        = f.file_field :image, class: 'type__photo-file'
+        = f.submit 'Send', class: 'type__submit-button'
