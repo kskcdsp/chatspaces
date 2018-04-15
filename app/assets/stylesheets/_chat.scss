@@ -25,12 +25,18 @@
   }
   &__icons {
     display: inline-block;
+    a {
+      color: white;
+    }
   }
   &__history {
     height: calc(100vh - 100px);
     padding: 0 20px;
     overflow-y: scroll;
     background-color: $back-thin-black;
+    a {
+      color: white;
+    }
   }
   &__user-upper {
     font-size: 15px;
@@ -62,6 +68,9 @@
     padding: 0 20px;
     border: 1px solid $sky-blue;
     color: $sky-blue;
+    a {
+      color: $sky-blue;
+    }
   }
   &__rightside-button {
     text-decoration: none;
