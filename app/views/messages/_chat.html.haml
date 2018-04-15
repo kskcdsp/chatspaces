@@ -21,14 +21,7 @@
       .message__rightside
         = link_to edit_group_path(current_user) do
           %p Edit
-    .chat
-      .chat__box
-        - 20.times do
-          .chat__upper
-          %p.chat__over-user
-            = current_user.name
-          %p.chat__create-time 2018/03/12 09:58
-          %p.chat__under-message こんにちは
+    = render 'message'
     .form.type
       = form_for '' do |f|
         = f.text_area :content, class: 'type__holder', placeholder: "type a message"
