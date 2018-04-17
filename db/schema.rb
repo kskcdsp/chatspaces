@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180416095347) do
+=======
+ActiveRecord::Schema.define(version: 20180417062949) do
+>>>>>>> f8b7d35... otherwise files commit
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -20,8 +24,13 @@ ActiveRecord::Schema.define(version: 20180416095347) do
   end
 
   create_table "groups_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+<<<<<<< HEAD
     t.integer  "group_id"
     t.integer  "user_id"
+=======
+    t.integer  "group_id",   null: false
+    t.integer  "user_id",    null: false
+>>>>>>> f8b7d35... otherwise files commit
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id", unique: true, using: :btree
