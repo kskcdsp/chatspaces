@@ -3,7 +3,7 @@
   margin: 60px auto;
   padding: 40px;
   background-color: white;
-  border: 1px solid $gray-gray;
+  border: 1px solid $thick-gray;
   border-radius: 5px;
   box-sizing: border-box;
   h1 {
@@ -15,7 +15,7 @@
   &__errors {
     margin: 30px 0;
     padding: 20px 40px;
-    border: 1px solid $gray-gray;
+    border: 1px solid $thick-gray;
     border-radius: 2px;
     text-align: center;
     h2 {
@@ -72,7 +72,7 @@
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
-    border-bottom: 1px solid $gray-gray;
+    border-bottom: 1px solid $thick-gray;
     &:after {
       content: "";
       clear: both;
