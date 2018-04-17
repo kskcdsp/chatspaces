@@ -23,8 +23,8 @@
           %p Edit
     = render 'message'
     .form.type
-      = form_for '' do |f|
-        = f.text_area :content, class: 'type__holder', placeholder: "type a message"
+      = form_for [@group, @message] do |f|
+        = f.text_area :body, class: 'type__holder', placeholder: "type a message"
         = f.label :image, class: 'type__photo' do
           = fa_icon 'picture-o', class: 'icon'
         = f.file_field :image, class: 'type__photo-file'
