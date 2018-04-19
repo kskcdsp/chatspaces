@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rubocop', require: false
+  gem 'pry-rails'
 end
 
 group :development do
