@@ -1,0 +1,8 @@
+.admin__history
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .admin__box
+      %p.admin__user-upper
+        = group.name
+      %p.admin__message-lower
+        メッセージはありません。
